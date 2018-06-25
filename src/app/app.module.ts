@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +16,9 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     AddTaskComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    AngularFireModule .initializeApp( environment .firebase, 'db-learning' ),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
