@@ -1,7 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <h1>{{ title }}</h1>
-  <h3>{{ description }}</h3>
-  <app-tasks></app-tasks>
-  <app-add-task></app-add-task>
+  <header>
+    <h3>{{ title }}</h3>
+    <h5>{{ description }}</h5>  
+  </header>
+  <div class="principal-menu">
+    <a routerLink="tareas" routerLinkActive="active" class="btn">Tareas</a>&nbsp;
+    <a routerLink="nueva-tarea" routerLinkActive="active" class="btn">Agregar</a>&nbsp;
+  </div>
+  <router-outlet></router-outlet>
 </div>
