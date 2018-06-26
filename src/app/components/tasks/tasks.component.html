@@ -1,8 +1,5 @@
-<div *ngFor="let task of tasks">
-  <h5>{{ task .title }}</h5>
-  <ul>
-    <li><b>Id: </b>{{ task .id }}</li>
-    <li><b>Descripción: </b>{{ task .description }}</li>
-    <li><b>Estado: </b>{{ task .status }}</li>
-  </ul>
+<div *ngIf="tasks">
+  <div *ngFor="let task of tasks">
+    <app-task-details [taskDetail]='task'></app-task-details>   
+  </div>
 </div>

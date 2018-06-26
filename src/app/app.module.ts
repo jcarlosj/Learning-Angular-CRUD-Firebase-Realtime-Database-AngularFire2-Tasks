@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -14,7 +15,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   declarations: [
     AppComponent,
     TasksComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule, 

@@ -1,3 +1,25 @@
-<p>
-    add-task-details works! 
-</p>
+<div *ngIf="taskDetail" >
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ taskDetail .title }}</span>
+          <p id="description_form_field" class="form-field-task">
+            <label for="description">Descripción: </label>{{ taskDetail .description }}
+          </p>
+          <p id="status_form_field" class="form-field-task">
+            <label for="status">Estado: </label>{{ taskDetail .status }}
+          </p>
+          <p id="active_form_field" class="form-field-task">
+            <label for="active">Activo: </label>{{ taskDetail .active }}
+          </p>
+        </div>
+        <div class="card-action">
+            <a>Desactivar</a>
+            <a>Activar</a>
+            <a>Eliminar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

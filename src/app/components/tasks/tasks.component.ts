@@ -27,13 +27,14 @@ export class TasksComponent implements OnInit {
         })
       )
       .subscribe( tasks => {
-        if( this.existsTasks( tasks ) ) {
+        //if( this.existsTasks( tasks ) ) {
           console .log( tasks );
           this .tasks = tasks;
-          return;
-        }
-        console .log( 'No hay registros!' );
+          //return;
+        //}
+        //console .log( 'No hay registros!' );
       });
+    
   }
 
   existsTasks( tasks ) {
