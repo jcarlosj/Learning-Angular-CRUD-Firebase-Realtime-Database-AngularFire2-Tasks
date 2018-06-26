@@ -1,3 +1,8 @@
-<p>
-  tasks works!
-</p>
+<div *ngFor="let task of tasks">
+  <h5>{{ task .title }}</h5>
+  <ul>
+    <li><b>Id: </b>{{ task .id }}</li>
+    <li><b>Descripción: </b>{{ task .description }}</li>
+    <li><b>Estado: </b>{{ task .status }}</li>
+  </ul>
+</div>
