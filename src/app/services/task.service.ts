@@ -21,4 +21,13 @@ export class TaskService {
   createTask( task: Task ): void {
     this .taskRef .push( task );
   }
+
+  deleteTask( id: string ): void {
+    this .taskRef .remove( id )
+      .catch( error => this .handleError( error ) );
+  }
+
+  private handleError( error ) {
+    console .log( error );
+  }
 }

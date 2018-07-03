@@ -18,4 +18,8 @@ export class TaskDetailsComponent implements OnInit {
     console .log( 'TaskDetailsComponent', this .taskDetail );
   }
 
+  deleteTask() {
+    this .taskService .deleteTask( this .taskDetail .key );
+  }
+
 }
