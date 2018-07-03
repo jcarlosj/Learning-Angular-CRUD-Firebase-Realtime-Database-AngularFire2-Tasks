@@ -18,4 +18,7 @@ export class TaskService {
     return this .taskRef;
   }
 
+  createTask( task: Task ): void {
+    this .taskRef .push( task );
+  }
 }
