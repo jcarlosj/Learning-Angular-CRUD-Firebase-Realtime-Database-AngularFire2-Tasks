@@ -9,7 +9,7 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-  tasks: any;
+  tasks: any = '';
 
   constructor( private taskService: TaskService ) { }
 
@@ -27,14 +27,15 @@ export class TasksComponent implements OnInit {
         })
       )
       .subscribe( tasks => {
-        //if( this.existsTasks( tasks ) ) {
+        if( this .existsTasks( tasks ) ) {
           console .log( tasks );
           this .tasks = tasks;
-          //return;
-        //}
-        //console .log( 'No hay registros!' );
+          return;
+        }
+        this .tasks = '';
+        console .log( 'No hay registros!' );
       });
-    
+
   }
 
   deleteTasks() {

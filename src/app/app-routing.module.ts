@@ -7,7 +7,7 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 const routes: Routes = [
     { path: '', redirectTo: 'tareas', pathMatch: 'full' },
     { path: 'tareas', component: TasksComponent },
-    { path: 'nueva-tarea', component: AddTaskComponent }
+    { path: 'tarea/:id', component: AddTaskComponent }
 ];
 
 @NgModule({

@@ -22,8 +22,25 @@ export class TaskService {
     this .taskRef .push( task );
   }
 
-  deleteTask( id: string ): void {
+  editTask( task: Task ): void {
+    console .log( 'Service: (editTask)', task );
+    this .taskRef .set( 
+      task .key, 
+      { 
+        title: task .title, 
+        description: task .description, 
+        status: task .status, 
+        active: task .active 
+      } 
+    ) 
+    .then( _ => console .log( 'Registro Actualizado!' ) )
+    .catch( error => this .handleError( error ) );
+    console .log( 'Service: ', task );
+  }
+
+  deleteTask( id ): void {
     this .taskRef .remove( id )
+      .then( _ => console .log( 'Registro eliminado exitosamente!' ) )
       .catch( error => this .handleError( error ) );
   }
 
