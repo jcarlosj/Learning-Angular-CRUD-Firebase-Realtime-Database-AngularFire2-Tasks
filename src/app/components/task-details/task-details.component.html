@@ -15,8 +15,8 @@
           </p>
         </div>
         <div class="card-action">
-            <a>Desactivar</a>
-            <a>Activar</a>
+            <a *ngIf="taskDetail .active" (click)="updateActiveField( false )">Desactivar</a>
+            <a *ngIf="! taskDetail .active" (click)="updateActiveField( true )">Activar</a>
             <a routerLink="/tarea/{{ taskDetail .key }}">Editar</a>&nbsp;
             <a (click)="deleteTask()">Eliminar</a>
         </div>

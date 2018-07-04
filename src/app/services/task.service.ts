@@ -38,6 +38,12 @@ export class TaskService {
     console .log( 'Service: ', task );
   }
 
+  updateActiveField( key: string, value: any ) {
+    this .taskRef .update( key, value )
+      .then( _ => console .log( 'Registro actualizado exitosamente!' ) )
+      .catch( error => this .handleError( error ) );
+  }
+
   deleteTask( id ): void {
     this .taskRef .remove( id )
       .then( _ => console .log( 'Registro eliminado exitosamente!' ) )

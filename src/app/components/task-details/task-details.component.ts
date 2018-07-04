@@ -22,4 +22,13 @@ export class TaskDetailsComponent implements OnInit {
     this .taskService .deleteTask( this .taskDetail .key );
   }
 
+  updateActiveField( isActive: boolean ) {
+    this .taskService .updateActiveField( 
+      this .taskDetail. key, 
+      {
+        active: isActive
+      }
+    );
+  }
+
 }
