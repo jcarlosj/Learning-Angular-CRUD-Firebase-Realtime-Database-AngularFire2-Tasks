@@ -1,4 +1,6 @@
+<hr />
 <div *ngIf="tasks">
+  <button (click)="deleteTasks()" class="waves-effect waves-light btn">Eliminar todos</button>
   <div *ngFor="let task of tasks">
     <app-task-details [taskDetail]='task'></app-task-details>   
   </div>

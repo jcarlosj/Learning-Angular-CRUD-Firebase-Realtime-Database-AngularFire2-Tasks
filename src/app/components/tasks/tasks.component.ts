@@ -37,6 +37,10 @@ export class TasksComponent implements OnInit {
     
   }
 
+  deleteTasks() {
+    this .taskService .deleteAllTasks();
+  }
+
   existsTasks( tasks ) {
     return 0 < tasks .length; 
   }

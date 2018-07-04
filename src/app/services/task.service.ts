@@ -27,6 +27,11 @@ export class TaskService {
       .catch( error => this .handleError( error ) );
   }
 
+  deleteAllTasks(): void {
+    this .taskRef .remove()
+      .catch( error => this .handleError( error ) );
+  }
+
   private handleError( error ) {
     console .log( error );
   }
