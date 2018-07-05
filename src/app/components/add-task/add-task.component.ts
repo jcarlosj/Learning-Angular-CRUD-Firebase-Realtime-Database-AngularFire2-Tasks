@@ -43,7 +43,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   save() {
-
+    
     if( this .id != 'nueva' ) {
       console .log( 'Save (Edit)', this .task );
       this .taskService .editTask( this .task );
@@ -66,6 +66,8 @@ export class AddTaskComponent implements OnInit {
 
   findTaskById( id ) {
     // Use snapshotChanges() .map() para almacenar el ID
+    var foundTask;
+
     this .taskService .getTasks()
       .snapshotChanges()
       .pipe(
@@ -73,10 +75,15 @@ export class AddTaskComponent implements OnInit {
           return changes .map( c => ({ key: c.payload.key, ...c.payload.val() })); 
         })
       )
-      .subscribe( task => {
-        if( this .existsTasks( task ) ) {
-          console .log( 'Tarea:', task[ 0 ] );
-          this .task = task[ 0 ];
+      .subscribe( tasks => {
+        if( this .existsTasks( tasks ) ) {
+          tasks .forEach( task => {
+            if( task .key === id ) {
+              console .log( 'Tarea:', task );   
+              this .task = task; 
+            }
+          });
+          console .log( 'Tarea Encontrada: ', this .task );
           //debugger;
           return;
         }
